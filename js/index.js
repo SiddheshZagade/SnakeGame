@@ -11,7 +11,9 @@ let snakeArr = [
     {x: 13, y: 15}
 ];
 
-food = {x: 6, y: 7};
+
+const foodImg = new Image();
+foodImg.src = "img/food.png";
 
 // Game Functions
 function main(ctime) {
@@ -91,12 +93,14 @@ function gameEngine(){
         }
         board.appendChild(snakeElement);
     });
-    // Display the food
+    Display the food
     foodElement = document.createElement('div');
     foodElement.style.gridRowStart = food.y;
     foodElement.style.gridColumnStart = food.x;
     foodElement.classList.add('food')
     board.appendChild(foodElement);
+
+    ctx.drawImage(foodImg, food.x, food.y);
 
 
 }
